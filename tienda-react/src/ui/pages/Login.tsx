@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react"
 import { useSesion } from "../../aplicacion/useSesion";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [usuario, setUsuario] = useState('');
@@ -43,6 +43,9 @@ export default function Login() {
             disabled={enviando}>
                 {enviando ? 'Entrando...' : 'Entrar'}
             </button>
+            <p className="text-center text-sm"> ¿No tienes una cuenta? 
+                <Link to="/registro" className="underline">Regístrate</Link>
+            </p>
         </form>
     )
 }

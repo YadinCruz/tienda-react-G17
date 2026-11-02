@@ -28,7 +28,7 @@ function mapearProducto (crudo : ProductoAPI) : Producto {
 
 export async function obtenerProductos(): Promise <{ productos : Producto[] ; esRespaldo: boolean}> {
     try {   
-        const r = await fetch(`${BASE}/products?limit=24`);
+        const r = await fetch(`${BASE}/products?limit=120`);
         if(!r.ok) throw new Error (`HTTP ${r.status}`);
         const data = (await r.json()) as { products : ProductoAPI[]};
         return {

@@ -10,6 +10,7 @@ import Checkout from "./ui/pages/Checkout"
 import Login from "./ui/pages/Login";
 import RutaProtegida from "./ui/components/RutaProtegida";
 import QuienesSomos from "./ui/pages/QuienesSomos";
+import Registro from "./ui/pages/Registro";
 
 export default function App() {
 
@@ -61,9 +62,12 @@ export default function App() {
       <Route path="*" element ={
           <NoEncontrada/>
       }/>
-      </Route> <Route path="/QuienesSomos" element={
-        <QuienesSomos/>}/>
-           
+      </Route>
+      <Route path="/QuienesSomos" element={
+        <QuienesSomos/>
+      }/>
+      <Route path="/registro" element={
+        <Registro/>}/>
     
     </Routes>
   )

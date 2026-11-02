@@ -9,6 +9,13 @@ interface RespuestaLogin {
     email : string;
     accessToken : string;
 }
+interface RespuestaRegistro {
+    id: number;
+    firstName: string;
+    lastName: string;
+    username: string;
+    email: string;
+}
 export async function iniciarSesion(usuario : string, clave: string) : Promise<Usuario>{
     const r = await fetch(`${BASE}/auth/login`, {
         method: 'POST',
@@ -38,4 +45,33 @@ export async function obtenerPerfil (token : string, signal? : AbortSignal) : Pr
         signal
     });
     if(!r.ok) throw new Error (`Sesion rechazada por el servidor (HTTP ${r.status})`);
+}
+export async function registrarUsuario( nombre: string,
+    apellido: string,
+    usuario: string,
+    email: string,
+    clave: string
+): Promise<RespuestaRegistro> {
+
+    const r = await fetch(`${BASE}/users/add`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            firstName: nombre,
+            lastName: apellido,
+            username: usuario,
+            email: email,
+            password: clave
+        })
+    });
+
+    if (!r.ok) {
+        throw new Error('No se pudo registrar el usuario');
+    }
+
+    const data = (await r.json()) as RespuestaRegistro;
+
+    return data;
 }
