@@ -15,10 +15,8 @@ function ProductCard({ producto, onAgregar } : Props) {
         <img src={producto.imagen} alt={producto.nombre} className="mb-3 aspect-square object-contain" />
         <p className="text-sm text-gray-500">{producto.marca}</p>
         <h2 className="font-semibold">{producto.nombre}</h2>
-                <div className="mt-3 rounded-lg border border-gray-200 bg-gray-50 p-3">
-          <p className="mb-1 text-xs font-semibold text-gray-500">
-            Descripción
-          </p>
+        <div className="descripcion mt-3 rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p className="mb-1 text-xs font-semibold text-gray-500">Descripción </p>
           <p className="text-sm text-gray-700">
             {producto.descripcion || "Sin descripción disponible"}
           </p>

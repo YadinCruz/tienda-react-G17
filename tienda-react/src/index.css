@@ -3,13 +3,15 @@
 :root {
   color-scheme: light;
 
-  --color-principal: #16324f;
+  --color-principal: #1E293B;
   --color-secundario: #2878a5;
   --color-detalle: #55b8b0;
-  --color-fondo: #f1f6fa;
+  --color-fondo: #101827;
   --color-tarjeta: #ffffff;
   --color-texto: #263746;
-  --color-borde: #cbd9e3;
+  --color-borde: #38BDF8;
+  --color-texto-secundario: #64748B;
+  --color-boton:#1E293B;
 }
 
 body {
@@ -50,6 +52,29 @@ footer {
   background-color: var(--color-principal);
   color: white;
   padding: 18px;
+}
+.tarjeta-producto {
+  display: flex;
+  flex-direction: column;
+  border-color: var(--color-borde);
+  color: white;
+}
+.tarjeta-producto div {
+background-color: var(--color-principal);
+border-color: var(--color-borde);
+color:white;
+}
+
+.tarjeta-producto button {
+  background-color: var(--color-boton);
+  color: white;
+  border-color: var(--color-borde);
+  margin-top: auto;
+}
+nav button {
+  background-color: var(--color-boton);
+  color: white;
+  border-color: var(--color-borde);
 }
 
 @media (min-width: 64em) {

@@ -20,18 +20,17 @@ export default function Registro() {
         e.preventDefault();
         setError('');
         setMensaje('');
-        if (clave !== confirmar) {
-            setError('Las contraseñas no coinciden');
+        if (clave !== confirmar) { setError('Las contraseñas no coinciden');
             return;
         }
         setEnviando(true);
         try {
             const nuevoUsuario = await registrarUsuario( nombre, apellido, usuario, email, clave);
             alert(`Usuario ${nuevoUsuario.username} registrado correctamente`);
-                navigate('');
+                navigate('/login');
             setNombre('');
             setApellido('');
-            setUsuario('');
+            setUsuario('')  ;
             setEmail('');
             setClave('');
             setConfirmar('');
@@ -87,16 +86,10 @@ export default function Registro() {
                 <p className="text-sm text-green-600">{mensaje}</p>
             )}
 
-            <button
-                type="submit"
-                className="rounded-full border px-4 py-2"
-                disabled={enviando}
-            >
+            <button type="submit" className="rounded-full border px-4 py-2"disabled={enviando} >
                 {enviando ? 'Registrando...' : 'Registrarse'}
             </button>
-
-            <p className="text-center text-sm">
-                ¿Ya tienes una cuenta?{" "}
+            <p className="text-center text-sm">  ¿Ya tienes una cuenta?{" "}
                 <Link to="/login" className="underline">
                     Inicia sesión
                 </Link>

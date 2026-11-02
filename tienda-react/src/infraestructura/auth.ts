@@ -42,36 +42,21 @@ export async function obtenerPerfil (token : string, signal? : AbortSignal) : Pr
         headers : {
             'Authorization' : `Bearer ${token}`
         },
-        signal
+ signal
     });
     if(!r.ok) throw new Error (`Sesion rechazada por el servidor (HTTP ${r.status})`);
 }
-export async function registrarUsuario( nombre: string,
-    apellido: string,
-    usuario: string,
-    email: string,
-    clave: string
+export async function registrarUsuario( nombre: string, apellido: string, usuario: string, email: string, clave: string
 ): Promise<RespuestaRegistro> {
-
     const r = await fetch(`${BASE}/users/add`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            firstName: nombre,
-            lastName: apellido,
-            username: usuario,
-            email: email,
-            password: clave
+        method: 'POST', headers: {'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName: nombre, lastName: apellido, username: usuario, email: email, password: clave
         })
     });
 
     if (!r.ok) {
         throw new Error('No se pudo registrar el usuario');
     }
-
     const data = (await r.json()) as RespuestaRegistro;
-
     return data;
 }
