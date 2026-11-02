@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, lazy, Suspense } from "react";
 import type {EstadoCarga, Producto} from "./dominio/tipos"
 import { obtenerProductos } from "./infraestructura/api"
 import Detalle from './ui/pages/Detalle';
@@ -9,11 +9,13 @@ import NoEncontrada from "./ui/pages/NoEncontrada"
 import Checkout from "./ui/pages/Checkout"
 import Login from "./ui/pages/Login";
 import RutaProtegida from "./ui/components/RutaProtegida";
-import QuienesSomos from "./ui/pages/QuienesSomos";
+
 import Registro from "./ui/pages/Registro";
+import Contactanos from "./ui/pages/Contactanos";
 
 export default function App() {
 
+  const QuienesSomos = lazy(() => import("./ui/pages/QuienesSomos"));
   const [productos, setProductos] = useState<Producto[]>([]);
   const [estado, setEstado] = useState<EstadoCarga>('cargando');
   const [esRespaldo, setEsRespaldo] = useState(false);
@@ -51,10 +53,10 @@ export default function App() {
         }
         />
         <Route element={<RutaProtegida/>}>
-          <Route  path="/checkout" element = {
-            <Checkout/>
-          }
-          />
+          <Route path="/checkout" element={
+            <Checkout/>}/>
+          <Route path="/contactanos" element={
+            <Contactanos/>}/>
         </Route>
         <Route path="/login" element = {
           <Login/>
@@ -64,10 +66,16 @@ export default function App() {
       }/>
       </Route>
       <Route path="/QuienesSomos" element={
-        <QuienesSomos/>
-      }/>
+        <Suspense fallback={<p>Cargando página...</p>}>
+            <QuienesSomos/>
+        </Suspense>
+}     /> 
       <Route path="/registro" element={
         <Registro/>}/>
+  
+      <Route path="/contactanos" element={
+      <Contactanos />} />
+
     
     </Routes>
   )

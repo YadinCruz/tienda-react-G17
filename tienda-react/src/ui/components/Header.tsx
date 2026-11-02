@@ -21,6 +21,7 @@ export default function Header ( {nombre , eslogan = "Tecnologia para todos"} : 
                     <NavLink to="/" className={({isActive}) => (isActive ? 'font-bold underline' : 'hover:underline')}>Catalogo</NavLink>
                     <NavLink to="/checkout" className={({isActive}) => (isActive ? 'font-bold underline' : 'hover:underline')}>Checkout</NavLink>
                     <NavLink to="/QuienesSomos" className={({isActive}) => (isActive ? 'font-bold underline' : 'hover:underline')}>¿Quienes somos?</NavLink>
+                    <NavLink to="/Contactanos" className={({isActive}) => (isActive ? 'font-bold underline' : 'hover:underline')}>Contactanos</NavLink>
                 </nav>
             </div>
             <p>{unidades} productos - {formatearPrecio(total)}</p>

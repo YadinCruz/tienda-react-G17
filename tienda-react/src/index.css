@@ -18,7 +18,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: var(--color-fondo);
-  color: var(--color-texto);
+  color: white;
   font-family: Arial, sans-serif;
 }
 
@@ -37,21 +37,16 @@ main {
   grid-area: contenido;
   padding: 20px;
 }
-
-aside {
-  grid-area: lateral;
-  align-self: start;
-  background-color: var(--color-tarjeta);
-  border: 1px solid var(--color-borde);
-  border-radius: 10px;
-  padding: 18px;
-}
-
 footer {
   grid-area: pie;
   background-color: var(--color-principal);
   color: white;
   padding: 18px;
+}
+.nosotros div{
+border-color: var(--color-borde);
+background: var(--color-principal);
+color: white;
 }
 .tarjeta-producto {
   display: flex;
@@ -63,6 +58,9 @@ footer {
 background-color: var(--color-principal);
 border-color: var(--color-borde);
 color:white;
+}
+.tarjeta-producto div p {
+  color:white;
 }
 
 .tarjeta-producto button {
@@ -76,7 +74,11 @@ nav button {
   color: white;
   border-color: var(--color-borde);
 }
-
+.seccion-contacto {
+    background-color: var(--color-tarjeta);
+    border-color:var(--color-borde) ;
+    color: white;
+  }
 @media (min-width: 64em) {
   body {
     grid-template-columns: 260px minmax(0, 1fr);
