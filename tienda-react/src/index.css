@@ -100,3 +100,6 @@ nav button {
 :hover.tarjeta-producto{
     animation: cursor 0.8s ease;
 }
+:hover.button{
+  animation : cursor 0.8s ease
+}
