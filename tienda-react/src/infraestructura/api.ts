@@ -10,6 +10,7 @@ interface ProductoAPI {
     thumbnail : string;
     category?: string;
     stock?: number;
+    description?:string;
 }
 
 function mapearProducto (crudo : ProductoAPI) : Producto {
@@ -20,12 +21,13 @@ function mapearProducto (crudo : ProductoAPI) : Producto {
         precio : crudo.price,
         imagen : crudo.thumbnail,
         categoria : crudo.category ?? 'otros',
-        stock : crudo.stock ?? 0
+        stock : crudo.stock ?? 0,
+        descripcion: crudo.description ?? ''
     }
 }
 
 export async function obtenerProductos(): Promise <{ productos : Producto[] ; esRespaldo: boolean}> {
-    try {
+    try {   
         const r = await fetch(`${BASE}/products?limit=24`);
         if(!r.ok) throw new Error (`HTTP ${r.status}`);
         const data = (await r.json()) as { products : ProductoAPI[]};

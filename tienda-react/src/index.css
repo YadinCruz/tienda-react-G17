@@ -1,1 +1,75 @@
 @import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+
+  --color-principal: #16324f;
+  --color-secundario: #2878a5;
+  --color-detalle: #55b8b0;
+  --color-fondo: #f1f6fa;
+  --color-tarjeta: #ffffff;
+  --color-texto: #263746;
+  --color-borde: #cbd9e3;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+header {
+  grid-area: cabecera;
+  background-color: var(--color-principal);
+  color: white;
+  padding: 20px;
+}
+
+main {
+  grid-area: contenido;
+  padding: 20px;
+}
+
+aside {
+  grid-area: lateral;
+  align-self: start;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+footer {
+  grid-area: pie;
+  background-color: var(--color-principal);
+  color: white;
+  padding: 18px;
+}
+
+@media (min-width: 64em) {
+  body {
+    grid-template-columns: 260px minmax(0, 1fr);
+    grid-template-areas:
+      "cabecera cabecera"
+      "lateral contenido"
+      "pie pie";
+    grid-template-rows: auto 1fr auto;
+  }
+}
+@keyframes cursor {
+  from {
+    transform: translateY(12px);}
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+:hover.tarjeta-producto{
+    animation: cursor 0.8s ease;
+}

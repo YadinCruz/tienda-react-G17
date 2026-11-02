@@ -1,7 +1,12 @@
 import type { Producto } from "../dominio/tipos";
 
 export const productos: Producto[] = [
-  { id: 1, nombre: 'Audífonos inalámbricos2', marca: 'TechSound', precio: 249.9, imagen: 'https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/1.png', stock: 12, categoria : 'audio' },
-  { id: 2, nombre: 'Laptop ultradelgada 14"', marca: 'Nova', precio: 3499, imagen: 'https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png', stock: 0, categoria: 'laptops' },
-  { id: 3, nombre: 'Reloj inteligente', marca: 'Clik', precio: 499.9, imagen: 'https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/1.png', stock: 3, categoria : 'relojes' },
+{ id: 1, nombre: 'Audífonos inalámbricos2', marca: 'TechSound', precio: 249.9, imagen: 'https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp', stock: 12, categoria: 'audio', descripcion: 'Audífonos inalámbricos con sonido nítido y batería de larga duración.' },
+{ id: 2, nombre: 'Laptop ultradelgada 14"', marca: 'Nova', precio: 3499, imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU3aEm9wv2fS-eJSn_Sh6UTo12A0a-0lUjiaAjHj5RDfj1fo3mborQGZo&s=10', stock: 0, categoria: 'laptops', descripcion: 'Laptop ultradelgada de 14 pulgadas, ideal para estudiar, trabajar y realizar múltiples tareas.' },
+{ id: 3, nombre: 'Reloj inteligente', marca: 'Clik', precio: 499.9, imagen: 'https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp', stock: 3, categoria: 'relojes', descripcion: 'Reloj inteligente para consultar notificaciones y controlar tu actividad diaria.' },
+{ id: 4, nombre: 'Teclado mecánico RGB', marca: 'GamePro', precio: 189.9, imagen: 'https://oechsle.vteximg.com.br/arquivos/ids/24702583-1000-1000/Image-1.jpg', stock: 8, categoria: 'accesorios', descripcion: 'Teclado mecánico con iluminación RGB, ideal para videojuegos y escritura.' },
+{ id: 5, nombre: 'Tablet de 11 pulgadas', marca: 'Nova', precio: 1299.9, imagen: 'https://www.efe.com.pe/media/catalog/product/z/a/zada0354pe_opc_1.jpg', stock: 6, categoria: 'tablets', descripcion: 'Tablet portátil para estudiar, navegar por internet y disfrutar contenido multimedia.' },
+{ id: 6, nombre: 'Mouse gamer RGB', marca: 'GamePro', precio: 89.9, imagen: 'https://cdn.memorykings.pe/files/2024/10/09/325648-MK026239A.jpg', stock: 15, categoria: 'accesorios', descripcion: 'Mouse gamer con iluminación RGB y diseño ergonómico para sesiones de juego.' },
+{ id: 7, nombre: 'Smartphone Nova X', marca: 'Nova', precio: 1899.9, imagen: 'https://http2.mlstatic.com/D_NQ_NP_954953-MLA97303116417_112025-O.webp', stock: 7, categoria: 'celulares', descripcion: 'Smartphone moderno para comunicarte, tomar fotografías y utilizar tus aplicaciones favoritas.' },
+{ id: 8, nombre: 'Auriculares gaming', marca: 'TechSound', precio: 159.9, imagen: 'https://ae-pic-a1.aliexpress-media.com/kf/S1f03b6c6975f4a0c83bd610a39915f00B.jpg_720x720q75.jpg', stock: 10, categoria: 'audio', descripcion: 'Auriculares diseñados para disfrutar videojuegos con audio envolvente y mayor comodidad.' },
 ];

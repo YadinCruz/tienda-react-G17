@@ -11,10 +11,18 @@ interface Props {
 function ProductCard({ producto, onAgregar } : Props) {
   const agotado = producto.stock === 0;
   return (
-    <article className={`w-64 rounded-xl border p-4 ${agotado && 'opacity-50'}`}>
+    <article className={`tarjeta-producto w-64 rounded-xl border p-4 ${agotado && 'opacity-50'}`}>
         <img src={producto.imagen} alt={producto.nombre} className="mb-3 aspect-square object-contain" />
         <p className="text-sm text-gray-500">{producto.marca}</p>
         <h2 className="font-semibold">{producto.nombre}</h2>
+                <div className="mt-3 rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <p className="mb-1 text-xs font-semibold text-gray-500">
+            Descripción
+          </p>
+          <p className="text-sm text-gray-700">
+            {producto.descripcion || "Sin descripción disponible"}
+          </p>
+        </div>
         <p className="text-sm">{
             producto.stock === 0 ? 'Agotado' : `${producto.stock} disponibles`
         }</p>
